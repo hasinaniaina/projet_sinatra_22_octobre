@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Profil potin</title>
+  </head>
+  <body>
+    <h1>Potin profi</h1>
+    <% gossips.each do |gossip| %>
+        <p>voici le potin n°: <%= params['id'] %></p>
+        <p>Son auteur: <%= gossip.author %></p>
+        <p>Son contenu:  <%= gossip.content %></p>
+    <% end %>
+    <a href="/gossips/edition/<%= params['id'] %>/">Editer un potin</a>
+    <a href="/">Revenir à la page d'Accueil</a>
+  </body>
+</html>

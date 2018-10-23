@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>Edition un potin</title>
+</head>
+<body>
+  <h1>Editer un potin !</h1>
+  <p>Balance ton potin, BG</p>
+  <% gossips.each do |gossip| %>
+  <form action="/gossips/edition/<%= params['id'] %>/" method='POST'>
+    <p>
+      Ton potin :
+    </p>
+    Balance ton blase : <input type='text' name='gossip_author' value = "<%= gossip.author %> " hidden/><br/>
+    Balance ton potin : <input type='text' name='gossip_content' value = "<%= gossip.content %>"/><br/>
+    <input type='submit'/>
+  </form>
+  <% end %>
+</body>
+</html>
