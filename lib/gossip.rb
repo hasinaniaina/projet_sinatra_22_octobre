@@ -43,5 +43,11 @@ class Gossip
 		File.open("./db/gossip.csv","w") do |file|
 			file.write('')
 		end
+		CSV.open("./db/gossip.csv", "ab") do |csv|
+			potin.each do |key, value|
+   				csv << [key, value]
+   			end
+ 		end
+ 		return true
 	end
 end
